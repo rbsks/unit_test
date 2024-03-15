@@ -1,15 +1,17 @@
-package com.example.demo.user.infrasturcture;
+package com.example.demo.user.adapter.out.persistence;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "users")
 public class UserEntity {
 
@@ -24,9 +26,4 @@ public class UserEntity {
 
     @Column(name = "name", nullable = false, length = 20)
     private String name;
-
-    public UserEntity(String email, String name) {
-        this.email = email;
-        this.name = name;
-    }
 }

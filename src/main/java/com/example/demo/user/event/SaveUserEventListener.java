@@ -1,7 +1,7 @@
 package com.example.demo.user.event;
 
-import com.example.demo.user.application.domain.SignUpHistory;
-import com.example.demo.user.application.domain.SignUpHistoryRepository;
+import com.example.demo.user.domain.SignUpHistory;
+import com.example.demo.user.adapter.out.persistence.SignUpHistoryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -24,6 +24,6 @@ public class SaveUserEventListener {
     public void transactionalEventListenerAfterCommit(SaveUserEvent saveUserEvent) {
         log.info("[TransactionalEventListener After Commit]");
         log.info("[save user]: {}", saveUserEvent);
-        signUpHistoryRepository.save(SignUpHistory.createSignupHistory(saveUserEvent.id()));
+        signUpHistoryRepository.save(SignUpHistory.create(saveUserEvent.id()));
     }
 }

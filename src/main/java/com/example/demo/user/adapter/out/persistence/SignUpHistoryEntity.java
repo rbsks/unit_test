@@ -1,4 +1,4 @@
- package com.example.demo.user.infrasturcture;
+ package com.example.demo.user.adapter.out.persistence;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

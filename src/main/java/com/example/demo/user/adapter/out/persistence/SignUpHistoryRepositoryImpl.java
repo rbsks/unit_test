@@ -1,7 +1,6 @@
-package com.example.demo.user.infrasturcture;
+package com.example.demo.user.adapter.out.persistence;
 
-import com.example.demo.user.application.domain.SignUpHistory;
-import com.example.demo.user.application.domain.SignUpHistoryRepository;
+import com.example.demo.user.domain.SignUpHistory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +12,7 @@ public class SignUpHistoryRepositoryImpl implements SignUpHistoryRepository {
 
     @Override
     public SignUpHistory save(SignUpHistory signupHistory) {
-        return SignUpHistory.of(
+        return SignUpHistory.fromEntity(
                 signupHistoryJpaRepository.save(
                         SignUpHistory.toEntity(signupHistory)
                 )
