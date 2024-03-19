@@ -9,7 +9,7 @@ public class UserTest {
 
     @Test
     @DisplayName("유저 이름 변경 테스트")
-    public void test() throws Exception {
+    public void modifyUserName() throws Exception {
         //given
         final String modifyUserName = "coby";
         User user = new User(1L, "rbsks147@test.com", "rbsks");
